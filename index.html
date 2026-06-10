@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Open YouTube</title>
+    <title>Opening YouTube...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script>
         const videoId = "6o0xFS-VgCY";
 
-        window.onload = function () {
-            window.location.href = "https://www.youtube.com/watch?v=" + videoId;
+        function openYouTubeApp() {
+            // Try app first
+            window.location = "vnd.youtube://" + videoId;
 
-            setTimeout(() => {
-                window.location.href =
-                    "https://www.youtube.com/watch?v=" + videoId;
-            }, 1000);
-        };
+            // Fallback to browser after short delay
+            setTimeout(function () {
+                window.location = "https://www.youtube.com/watch?v=" + videoId;
+            }, 1200);
+        }
+
+        window.onload = openYouTubeApp;
     </script>
 </head>
+
 <body>
     <p>Opening YouTube...</p>
 </body>
