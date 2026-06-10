@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open in YouTube</title>
+    <script>
+        const videoId = "6o0xFS-VgCY";
+
+        window.onload = function() {
+            window.location.href = "youtube://watch?v=" + videoId;
+
+            setTimeout(() => {
+                window.location.href =
+                    "https://www.youtube.com/watch?v=" + videoId;
+            }, 1000);
+        };
+    </script>
+</head>
+<body>
+    <p>Opening YouTube...</p>
+</body>
+</html>
